@@ -16,6 +16,8 @@ app.use(bodyParser.json());
 //arrow function:
 //const rootCall = (req, res)=>res.send('thank you very much');
 
+
+//GET 
 app.get('/', (req, res)=> {
     res.send('thank you very much');
 })
@@ -28,11 +30,14 @@ app.get('/users/:id', (req, res)=>{
     res.send({id,name});
 })
 
-//post 
 
+
+//post 
 app.post('/addUser', (req, res)=>{
     console.log('data received', req.body);
-    //post to database
+    //save to database
+    const user = req.body;
+    user.id= 33;
     res.send(req.body);
 })
 
